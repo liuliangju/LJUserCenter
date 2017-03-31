@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LJUserCenter"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "静态cell的定制，只需提供数据源即可"
   s.homepage     = "https://github.com/liuliangju/LJUserCenter"
   s.license      = "MIT"
@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/liuliangju/LJUserCenter.git", :tag => s.version.to_s}
   s.source_files  = "LJUserCenter/Classes/*.{h,m}"
   s.requires_arc = true
-  s.dependency "Masonry", "~> 1.0.1"
+  s.dependency "Masonry", "~> 1.0.2"
 end

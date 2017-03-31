@@ -13,18 +13,18 @@ static const CGFloat kSectionHeaderAndFooterMarginLeft = 15.0f;
 @class LJUserCenterTableViewCell;
 
 @protocol LJUserCenterTableViewCellDelegate <NSObject>
+@optional
 
 - (void)didCheckChanged:(BOOL)checked
-        withCellModel:(LJUserCenterCellModel *)cellModel
-          atCell:(LJUserCenterTableViewCell *)cell;
+          withCellModel:(LJUserCenterCellModel *)cellModel
+                 atCell:(LJUserCenterTableViewCell *)cell;
 
-@optional
 @end
 
 @interface LJUserCenterTableViewCell : UITableViewCell
-
 @property (nonatomic, strong) LJUserCenterCellModel *cellModel;
 @property (nonatomic, weak) id <LJUserCenterTableViewCellDelegate> delegate;
-
-
 @end
+
+
+

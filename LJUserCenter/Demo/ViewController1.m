@@ -7,7 +7,6 @@
 //
 
 #import "ViewController1.h"
-#import "LJUserCenterCellModel.h"
 #import "LJUserCenterTableViewCell.h"
 
 
@@ -68,23 +67,11 @@
 }
 
 
-- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell
-        withCellModel:(LJUserCenterCellModel *)cellModel
-          atIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"点击%ld-%ld", indexPath.section, indexPath.row);
-    if (cellModel.accessoryType == LJCellAccessoryCheckmark) {
-        BOOL mustChecked = NO;
-        for (LJUserCenterCellModel *cellModel in self.userCenterDatasource[indexPath.section]) {
-            if (cellModel.checked) {
-                mustChecked = YES;
-                break;
-            }
-        }
-        if (!mustChecked) {
-            cellModel.checked = YES;
-            tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-    }
+- (void)didCheckChanged:(BOOL)checked
+          withCellModel:(LJUserCenterCellModel *)cellModel
+                 atCell:(LJUserCenterTableViewCell *)cell {
+    
+    NSLog(@"%@", @(checked));
 }
 
 

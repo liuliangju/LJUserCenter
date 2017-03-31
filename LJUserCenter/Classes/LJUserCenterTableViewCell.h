@@ -14,16 +14,9 @@ static const CGFloat kSectionHeaderAndFooterMarginLeft = 15.0f;
 
 @protocol LJUserCenterTableViewCellDelegate <NSObject>
 
-/**
- *  checked有变化时回调该方法
- *
- *  @param tableViewCell 被点击的cell
- *  @param cellModel     cell数据model，checked已经被置为最新的值了
- *  @param indexPath     cell位置
- */
-- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell
+- (void)didCheckChanged:(BOOL)checked
         withCellModel:(LJUserCenterCellModel *)cellModel
-          atIndexPath:(NSIndexPath *)indexPath;
+          atCell:(LJUserCenterTableViewCell *)cell;
 
 @optional
 @end
@@ -31,7 +24,6 @@ static const CGFloat kSectionHeaderAndFooterMarginLeft = 15.0f;
 @interface LJUserCenterTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) LJUserCenterCellModel *cellModel;
-@property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) id <LJUserCenterTableViewCellDelegate> delegate;
 
 

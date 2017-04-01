@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/liuliangju/LJUserCenter.git", :tag => s.version.to_s}
   s.source_files  = "LJUserCenter/Classes/*.{h,m}"
   s.requires_arc = true
-  s.dependency "Masonry", "~> 1.0.2"
+  s.dependency "Masonry", "~> 1.0.1"
 end

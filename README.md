@@ -5,6 +5,6 @@
 With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
 
 ```
-pod 'LJUserCenter', '~> 0.4.0 
+pod 'LJUserCenter', '~> 0.4.0' 
 ```
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LJUserCenter"
-  s.version      = "0.4.0"
+  s.version      = "0.5.0"
   s.summary      = "静态cell的定制，只需提供数据源即可"
 
 

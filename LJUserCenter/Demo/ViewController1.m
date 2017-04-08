@@ -67,11 +67,23 @@
 }
 
 
-- (void)didCheckChanged:(BOOL)checked
-          withCellModel:(LJUserCenterCellModel *)cellModel
-                 atCell:(LJUserCenterTableViewCell *)cell {
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath {
+
+    NSLog(@"%@", @(cellModel.checked));
     
-    NSLog(@"%@", @(checked));
+    if (cellModel.accessoryType == LJCellAccessoryCheckmark) {
+        BOOL mustChecked = NO;
+        for (LJUserCenterCellModel *cellModel in self.userCenterDatasource[indexPath.section]) {
+            if (cellModel.checked) {
+                mustChecked = YES;
+                break;
+            }
+        }
+        if (!mustChecked) {
+            cellModel.checked = YES;
+            tableViewCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
 }
 
 

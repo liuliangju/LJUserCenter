@@ -16,21 +16,23 @@ static const CGFloat kSectionHeaderAndFooterMarginLeft = 15.0f;
 @optional
 
 /**
- *  checked有变化时调用该方法，子类如果关注则需要继承该方法
+ *  checked有变化时回调该方法
  *
- *  @param checked   选中则为YES否则为NO
- *  @param cellModel cell数据model
- *  @param cell      点击的cell
+ *  @param tableViewCell 被点击的cell
+ *  @param cellModel     cell数据model，checked已经被置为最新的值了
+ *  @param indexPath     cell位置
  */
-- (void)didCheckChanged:(BOOL)checked
-          withCellModel:(LJUserCenterCellModel *)cellModel
-                 atCell:(LJUserCenterTableViewCell *)cell;
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell
+        withCellModel:(LJUserCenterCellModel *)cellModel
+          atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 @interface LJUserCenterTableViewCell : UITableViewCell
 @property (nonatomic, strong) LJUserCenterCellModel *cellModel;
 @property (nonatomic, weak) id <LJUserCenterTableViewCellDelegate> delegate;
+@property (nonatomic, weak) UITableView *tableView;
+
 @end
 
 

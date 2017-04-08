@@ -31,11 +31,11 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 
 - (void)setUp {
     __weak typeof(self) weakself = self;
-
+    
     if (self.cellModel.tintColor) {
         self.tintColor = self.cellModel.tintColor;
     }
-
+    
     /**
      *  设置详情
      */
@@ -162,15 +162,16 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 }
 
 - (void)valueChanged:(UISwitch *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didCheckChanged:withCellModel:atCell:)]) {
-        [self.delegate didCheckChanged:sender.on withCellModel:self.cellModel atCell:self];
+    self.cellModel.checked = !self.cellModel.checked;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:withCellModel:atIndexPath:)]) {
+        [self.delegate tableViewCell:self withCellModel:self.cellModel atIndexPath:[self.tableView indexPathForCell:self]];
     }
 }
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

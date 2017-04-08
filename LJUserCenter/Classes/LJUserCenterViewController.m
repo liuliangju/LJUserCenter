@@ -21,9 +21,9 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.userCenterDatasource = [self loadUserCenterDatasource];
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -55,11 +55,12 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
     LJUserCenterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifier];
     if (!cell) {
         cell = [[LJUserCenterTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                             reuseIdentifier:kReuseIdentifier];
+                                                reuseIdentifier:kReuseIdentifier];
+        cell.tableView = tableView;
+        cell.delegate = self;
         
     }
     cell.cellModel = self.userCenterDatasource[indexPath.section][indexPath.row];
-    cell.delegate = self;
     return cell;
 }
 
@@ -73,7 +74,6 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     LJUserCenterCellModel *cellModel = self.userCenterDatasource[indexPath.section][indexPath.row];
     if (cellModel.operation) {
         cellModel.operation();
@@ -85,17 +85,17 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
         LJUserCenterTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             cell.accessoryType = UITableViewCellAccessoryNone;
-            if (cell.delegate && [cell.delegate respondsToSelector:@selector(didCheckChanged:withCellModel:atCell:)]) {
-                [cell.delegate didCheckChanged:NO withCellModel:cellModel atCell:cell];
+            if (cell.delegate && [cell.delegate respondsToSelector:@selector(tableViewCell:withCellModel:atIndexPath:)]) {
+                [cell.delegate tableViewCell:cell withCellModel:cellModel atIndexPath:indexPath];
             }
         } else {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            if (cell.delegate && [cell.delegate respondsToSelector:@selector(didCheckChanged:withCellModel:atCell:)]) {
-                [cell.delegate didCheckChanged:YES withCellModel:cellModel atCell:cell];
+            if (cell.delegate && [cell.delegate respondsToSelector:@selector(tableViewCell:withCellModel:atIndexPath:)]) {
+                [cell.delegate tableViewCell:cell withCellModel:cellModel atIndexPath:indexPath];
             }
         }
         for (LJUserCenterTableViewCell *theCell in [tableView visibleCells]) {
-            if (theCell != cell && theCell.accessoryType == UITableViewCellAccessoryCheckmark) {
+            if (theCell != cell && (theCell.accessoryType == UITableViewCellAccessoryCheckmark)) {
                 theCell.accessoryType = UITableViewCellAccessoryNone;
             }
         }
@@ -211,7 +211,6 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
     return [super tableView:tableView heightForFooterInSection:section];
 }
 
-
 /**
  *  子类继承该方法提供数据源
  *
@@ -257,13 +256,13 @@ static const CGFloat kHeaderAndFooterFontSize = 14.0f;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

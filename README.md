@@ -1,5 +1,12 @@
 # LJUserCenter
-静态cell的定制，只需提供数据源即可
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/liuliangju/LJUserCenter/raw/master/LICENSE)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/LJUserCenter.svg?style=flat)](http://cocoapods.org/?q=LJUserCenter)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+![Platform](http://cocoapod-badges.herokuapp.com/p/LJUserCenter/badge.png)
+
+Features
+==============
+Custom static cell easyily, Just need to provide the data source。
 
 ## Installation
 With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
@@ -7,10 +14,45 @@ With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
 ```
 pod 'LJUserCenter', '~> 0.6.0' 
 ```
+Manually:
+Drag all files under `LJUserCenter/Classes` folder into your project.
 
 ## Screenshots
-![](https://github.com/liuliangju/LJUserCenter/raw/master/Screenshots/image1.png) ![](https://github.com/liuliangju/LJUserCenter/raw/master/Screenshots/image2.png)
+<img src="https://github.com/liuliangju/LJUserCenter/raw/master/Screenshots/image1.png" width="240"/> <img src="https://github.com/liuliangju/LJUserCenter/raw/master/Screenshots/image2.png" width="240"/>
 
+## Usage
+
+If you want to create your own `ViewController`, simply you only need to subclass from `LJUserCenterViewController`.
+```objc
+@interface YourCustomViewController : LJUserCenterViewController
+
+@end
+```
+realize 
+```objc
+- (NSArray *)loadUserCenterDatasource;
+```
+you can custom your cell like this
+```objc
+- (NSArray *)loadUserCenterDatasource {
+    NSMutableArray *datasource = [NSMutableArray array];
+    LJUserCenterCellModel *cellModel11 = [[LJUserCenterCellModel alloc] init];
+    cellModel11.title = @"微信号";
+    cellModel11.detail = @"123456789";
+    NSArray *section1 = @[cellModel11];
+    [datasource addObject:section1];
+    return datasource;
+}
+```
+if you want reloadData tableView just to  
+``` objc
+- (void)reloadUserCenterDatasource;
+```
+or if you want to know which cell be Called after the user changes the selection, realize `LJUserCenterTableViewCellDelegate`(optional);
+```objc
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
+```
+for more use, download the project and see the demo
 
 ## Contributing
 

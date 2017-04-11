@@ -62,22 +62,22 @@ Forks, patches and other feedback are welcome.
 
 ## License
 
-LJUserCenter is released under the MIT license. See LICENSE file for details.
-<br/><br/>
-中文介绍
-==============
+LJUserCenter is released under the MIT license. See LICENSE file for details.<br/>
+
+# 中文介绍
+
 ## 特性
 - 静态cell的定制，只需提供数据源
 
 ## 用法
 继承于`LJUserCenterViewController`创建自己的控制器
 
-实现
+实现以下方法来构造数据源
 
 ```objc
 - (NSArray *)loadUserCenterDatasource;
 ```
-这个方法来构造数据源，例如:
+例如:
 ```objc
 - (NSArray *)loadUserCenterDatasource {
     NSMutableArray *datasource = [NSMutableArray array];
@@ -89,18 +89,17 @@ LJUserCenter is released under the MIT license. See LICENSE file for details.
     return datasource;
 }
 ```
-当需要刷新数据源时需要实现
+当需要刷新数据源时需要实现以下方法
 ``` objc
 - (void)reloadUserCenterDatasource;
 ```
-这个方法
 
-当需要监听cell的点击事件时，需要实现`LJUserCenterTableViewCellDelegate`(optional)代理方法;
+当需要监听cell的点击事件时，需要实现`LJUserCenterTableViewCellDelegate`代理方法;
 ```objc
 - (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
 ```
 ## 许可证
-LJUserCenter 使用 MIT 许可证，详情见 LICENSE 文件。
+LJUserCenter 使用 MIT 许可证，详情见 [LICENSE](https://github.com/liuliangju/LJUserCenter/raw/master/LICENSE) 文件。
 
 
 

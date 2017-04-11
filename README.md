@@ -50,7 +50,7 @@ if you want reloadData tableView just to
 ``` objc
 - (void)reloadUserCenterDatasource;
 ```
-or if you want to know which cell be Called after the user changes the selection, realize `LJUserCenterTableViewCellDelegate`(optional);
+or if you want to know which cell be Called after the user changes the selection, realize `LJUserCenterTableViewCellDelegate`(optional) method;
 ```objc
 - (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
 ```
@@ -62,7 +62,7 @@ Forks, patches and other feedback are welcome.
 
 ## License
 
-LJUserCenter is released under the MIT license. See LICENSE file for details.<br/>
+LJUserCenter is released under the MIT license. See LICENSE file for details.<br/><br/>
 
 # 中文介绍
 
@@ -98,8 +98,10 @@ LJUserCenter is released under the MIT license. See LICENSE file for details.<br
 ```objc
 - (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
 ```
+更多使用,下载项目查看demo
+
 ## 许可证
-LJUserCenter 使用 MIT 许可证，详情见 [LICENSE](https://github.com/liuliangju/LJUserCenter/raw/master/LICENSE) 文件。
+LJUserCenter 使用 MIT 许可证，详情见 LICENSE 文件。
 
 
 

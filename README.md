@@ -62,23 +62,48 @@ Forks, patches and other feedback are welcome.
 
 ## License
 
-Copyright (c) 2016 liangju. All rights reserved.
+LJUserCenter is released under the MIT license. See LICENSE file for details.
+<br/><br/>
+中文介绍
+==============
+## 特性
+- 静态cell的定制，只需提供数据源
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## 用法
+继承于`LJUserCenterViewController`创建自己的控制器
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+实现
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```objc
+- (NSArray *)loadUserCenterDatasource;
+```
+这个方法来构造数据源，例如:
+```objc
+- (NSArray *)loadUserCenterDatasource {
+    NSMutableArray *datasource = [NSMutableArray array];
+    LJUserCenterCellModel *cellModel11 = [[LJUserCenterCellModel alloc] init];
+    cellModel11.title = @"微信号";
+    cellModel11.detail = @"123456789";
+    NSArray *section1 = @[cellModel11];
+    [datasource addObject:section1];
+    return datasource;
+}
+```
+当需要刷新数据源时需要实现
+``` objc
+- (void)reloadUserCenterDatasource;
+```
+这个方法
+
+当需要监听cell的点击事件时，需要实现`LJUserCenterTableViewCellDelegate`(optional)代理方法;
+```objc
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
+```
+## 许可证
+LJUserCenter 使用 MIT 许可证，详情见 LICENSE 文件。
+
+
+
+
+
 

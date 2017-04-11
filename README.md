@@ -8,13 +8,13 @@
 
 Features
 ==============
-Custom static cell easyily, Just need to provide the data source。
+- Custom static cell easyily, Just need to provide the data source。
 
 ## Installation
 With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
 
 ```
-pod 'LJUserCenter', '~> 0.6.0' 
+pod 'LJUserCenter', '~> 0.7.0' 
 ```
 Manually:
 Drag all files under `LJUserCenter/Classes` folder into your project.

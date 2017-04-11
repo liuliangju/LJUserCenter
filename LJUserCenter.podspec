@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "LJUserCenter"
-  s.version      = "0.6.0"
-  s.summary      = "静态cell的定制，只需提供数据源即可"
+  s.version      = "0.7.0"
+  s.summary      = "Custom static cell easyily, Just need to provide the data source"
 
 
   s.homepage     = "https://github.com/liuliangju/LJUserCenter"

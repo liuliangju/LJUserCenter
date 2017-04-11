@@ -52,7 +52,9 @@ if you want reloadData tableView just to
 ```
 or if you want to know which cell be Called after the user changes the selection, realize `LJUserCenterTableViewCellDelegate`(optional) method;
 ```objc
-- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell 
+        withCellModel:(LJUserCenterCellModel *)cellModel 
+          atIndexPath:(NSIndexPath *)indexPath;
 ```
 for more use, download the project and see the demo
 
@@ -96,7 +98,9 @@ LJUserCenter is released under the MIT license. See LICENSE file for details.<br
 
 当需要监听cell的点击事件时，需要实现`LJUserCenterTableViewCellDelegate`代理方法;
 ```objc
-- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell withCellModel:(LJUserCenterCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
+- (void)tableViewCell:(LJUserCenterTableViewCell *)tableViewCell 
+        withCellModel:(LJUserCenterCellModel *)cellModel 
+          atIndexPath:(NSIndexPath *)indexPath;
 ```
 更多使用,下载项目查看demo
 

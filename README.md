@@ -14,7 +14,7 @@ Features
 With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
 
 ```
-pod 'LJUserCenter', '~> 0.7.0' 
+pod 'LJUserCenter', '~> 0.8.0' 
 ```
 Manually:
 Drag all files under `LJUserCenter/Classes` folder into your project.
@@ -69,7 +69,7 @@ LJUserCenter is released under the MIT license. See LICENSE file for details.<br
 # 中文介绍
 
 ## 特性
-- 静态cell的定制，只需提供数据源
+- 静态cell的定制，只需提供数据源，可以快速的创建同种模式的cell。
 
 ## 用法
 继承于`LJUserCenterViewController`创建自己的控制器

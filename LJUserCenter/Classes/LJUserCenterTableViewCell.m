@@ -84,6 +84,12 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
     }
     
     self.selectionStyle = UITableViewCellSelectionStyleDefault;
+    if (self.cellModel.accessoryType != LJCellAccessorySwitch) {
+        if (self.switchView) {
+            self.switchView.hidden = YES;
+            self.accessoryView = nil;
+        }
+    }
     switch (self.cellModel.accessoryType) {
         case LJCellAccessoryDisclosureIndicator: {
             self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -104,6 +110,7 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
             self.accessoryType = UITableViewCellAccessoryDetailButton;
             break;
         case LJCellAccessorySwitch: {
+            self.switchView.hidden = NO;
             self.accessoryView = self.switchView;
             self.switchView.on = self.cellModel.checked;
             [self.switchView addTarget:self action:@selector(valueChanged:)

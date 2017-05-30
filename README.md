@@ -14,7 +14,7 @@ Features
 With[ CocoaPods,](https://cocoapods.org/) add this line to your Podfile.
 
 ```
-pod 'LJUserCenter', '~> 0.8.0' 
+pod 'LJUserCenter', '~> 0.9.0' 
 ```
 Manually:
 Drag all files under `LJUserCenter/Classes` folder into your project.

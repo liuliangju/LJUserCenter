@@ -36,7 +36,7 @@
     cellModel11.detailView = [[UIView alloc] init];
     [cellModel11.detailView addSubview:label];
     UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [UIImage imageNamed:@"profileLockOff"];
+    imageView.image = [UIImage imageNamed:@"LJUserCenter.bundle/images/profileLockOff"];
     CGFloat labelHeight = label.frame.size.height;
     CGFloat labelWidth = label.frame.size.width;
     CGSize iconSize = CGSizeMake(14, 14);

@@ -30,6 +30,7 @@
 		A7B339C91EDD074A0025675B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B339BC1EDD074A0025675B /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		A7B339CA1EDD074A0025675B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B339BE1EDD074A0025675B /* View+MASAdditions.m */; };
 		A7B339CB1EDD074A0025675B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B339C11EDD074A0025675B /* ViewController+MASAdditions.m */; };
+		A7B339D81EDD0AE70025675B /* LJUserCenter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A7B339D71EDD0AE70025675B /* LJUserCenter.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		A7B339BF1EDD074A0025675B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		A7B339C01EDD074A0025675B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		A7B339C11EDD074A0025675B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		A7B339D71EDD0AE70025675B /* LJUserCenter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LJUserCenter.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				A7B339221EDD02AE0025675B /* ViewController2.m */,
 				A7B339231EDD02AE0025675B /* ViewController3.h */,
 				A7B339241EDD02AE0025675B /* ViewController3.m */,
+				A7B339D71EDD0AE70025675B /* LJUserCenter.bundle */,
 				A7B339A71EDD074A0025675B /* Libraries */,
 				A78C08301EDD019300E366EB /* Main.storyboard */,
 				A78C08331EDD019300E366EB /* Assets.xcassets */,
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A78C08371EDD019300E366EB /* LaunchScreen.storyboard in Resources */,
+				A7B339D81EDD0AE70025675B /* LJUserCenter.bundle in Resources */,
 				A78C08341EDD019300E366EB /* Assets.xcassets in Resources */,
 				A78C08321EDD019300E366EB /* Main.storyboard in Resources */,
 			);

@@ -192,14 +192,14 @@
 		A7B339751EDD06850025675B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A7B339761EDD06850025675B /* LJUserCenterCellModel.h */,
-				A7B339771EDD06850025675B /* LJUserCenterCellModel.m */,
 				A7B339781EDD06850025675B /* LJUserCenterRootViewController.h */,
 				A7B339791EDD06850025675B /* LJUserCenterRootViewController.m */,
-				A7B3397A1EDD06850025675B /* LJUserCenterTableViewCell.h */,
-				A7B3397B1EDD06850025675B /* LJUserCenterTableViewCell.m */,
 				A7B3397C1EDD06850025675B /* LJUserCenterViewController.h */,
 				A7B3397D1EDD06850025675B /* LJUserCenterViewController.m */,
+				A7B339761EDD06850025675B /* LJUserCenterCellModel.h */,
+				A7B339771EDD06850025675B /* LJUserCenterCellModel.m */,
+				A7B3397A1EDD06850025675B /* LJUserCenterTableViewCell.h */,
+				A7B3397B1EDD06850025675B /* LJUserCenterTableViewCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

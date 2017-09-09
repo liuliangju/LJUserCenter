@@ -3,7 +3,7 @@
 [![CocoaPods](http://img.shields.io/cocoapods/v/LJUserCenter.svg?style=flat)](http://cocoapods.org/?q=LJUserCenter)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 ![Platform](http://cocoapod-badges.herokuapp.com/p/LJUserCenter/badge.png)&nbsp;
-[![Build Status](https://travis-ci.org/liuliangju/LJUserCenter.svg?branch=master)](https://travis-ci.org/liuliangju/LJUserCenter)
+[![CI Status](https://travis-ci.org/liuliangju/LJUserCenter.svg?branch=master)](https://travis-ci.org/liuliangju/LJUserCenter)
 
 
 Features

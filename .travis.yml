@@ -1,5 +1,14 @@
-{
-  "language": "objective-c",
-  "osx_image": "xcode8.3",
-  group: deprecated-2017Q3
-}
+language: objective-c
+osx_image: xcode9
+xcode_project: Framework/LJUserCenter.xcodeproj
+xcode_scheme: LJUserCenter
+
+before_install:
+- env
+- xcodebuild -version
+- xcodebuild -showsdks
+- xcpretty --version
+
+script:
+- set -o pipefail
+- xcodebuild clean build -project "$TRAVIS_XCODE_PROJECT"  -scheme "$TRAVIS_XCODE_SCHEME" | xcpretty

@@ -1,13 +1,8 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode8.2
 xcode_scheme: LJUserCenter
-
 before_install:
-- env
-- xcodebuild -version
-- xcodebuild -showsdks
-- xcpretty --version
-
-script:
-- set -o pipefail
-- xcodebuild clean build -project "$TRAVIS_XCODE_PROJECT"  -scheme "$TRAVIS_XCODE_SCHEME" | xcpretty
+    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+    - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+    - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
+script: rake test

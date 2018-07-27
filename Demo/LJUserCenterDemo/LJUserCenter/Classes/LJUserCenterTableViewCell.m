@@ -31,7 +31,6 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 
 - (void)setUp {
     __weak typeof(self) weakself = self;
-    
     if (self.cellModel.tintColor) {
         self.tintColor = self.cellModel.tintColor;
     }

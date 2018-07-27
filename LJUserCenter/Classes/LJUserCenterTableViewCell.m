@@ -24,12 +24,17 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 
 @implementation LJUserCenterTableViewCell
 
-- (void)setCellModel:(LJUserCenterCellModel *)cellModel {
-    _cellModel = cellModel;
-    [self setUp];
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
 }
 
-- (void)setUp {
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+}
+
+#pragma mark - Private Methods
+
+- (void)setup {
     __weak typeof(self) weakself = self;
     
     if (self.cellModel.tintColor) {
@@ -85,8 +90,8 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
     
     self.selectionStyle = UITableViewCellSelectionStyleDefault;
     if (self.cellModel.accessoryType != LJCellAccessorySwitch) {
-        if (self.switchView) {
-            self.switchView.hidden = YES;
+        if (_switchView) {
+            _switchView.hidden = YES;
             self.accessoryView = nil;
         }
     }
@@ -171,22 +176,16 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 - (void)valueChanged:(UISwitch *)sender {
     self.cellModel.checked = !self.cellModel.checked;
     if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:withCellModel:atIndexPath:)]) {
-        [self.delegate tableViewCell:self withCellModel:self.cellModel atIndexPath:[self.tableView indexPathForCell:self]];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:self];
+        [self.delegate tableViewCell:self withCellModel:self.cellModel atIndexPath:indexPath];
     }
 }
 
+#pragma mark - Getters and Setters
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
-}
-
-
-#pragma marl lazyload
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc]init];
+        _titleLabel = [[UILabel alloc] init];
         _titleLabel.numberOfLines = 1;
         _titleLabel.font = [UIFont systemFontOfSize:17];
         [self.contentView addSubview:_titleLabel];
@@ -196,10 +195,10 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 
 - (UILabel *)detailLabel {
     if (!_detailLabel) {
-        _detailLabel = [[UILabel alloc]init];
+        _detailLabel = [[UILabel alloc] init];
         _detailLabel.textAlignment = NSTextAlignmentRight;
-        _detailLabel.font = [UIFont systemFontOfSize:14];
-        _detailLabel.textColor = [UIColor grayColor];
+        _detailLabel.numberOfLines = 1;
+        _detailLabel.font = [UIFont systemFontOfSize:17];
         [self.contentView addSubview:_detailLabel];
     }
     return _detailLabel;
@@ -216,10 +215,14 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
 
 - (UISwitch *)switchView {
     if (!_switchView) {
-        _switchView = [[UISwitch alloc]init];
+        _switchView = [[UISwitch alloc] init];
     }
     return _switchView;
 }
 
+- (void)setCellModel:(LJUserCenterCellModel *)cellModel {
+    _cellModel = cellModel;
+    [self setup];
+}
 
 @end

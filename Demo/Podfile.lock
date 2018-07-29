@@ -1,0 +1,23 @@
+PODS:
+  - LJUserCenter (0.9.0):
+    - Masonry (~> 1.0.2)
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - LJUserCenter (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  LJUserCenter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LJUserCenter: 2b1704ffda871c6eac2e5737ba86e60ecf0e1057
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: ce19da5d7f6dcb647eec426beb14fd279e244665
+
+COCOAPODS: 1.5.3

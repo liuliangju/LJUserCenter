@@ -158,8 +158,8 @@ static const CGFloat kTitleMarginRight2 = 10.0f;
         CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
         CGFloat maxWidth = 0.0f;
         CGFloat detailViewWidth = 0.0f;
-        if (_detailView) {
-            detailViewWidth = _detailView.frame.size.width;
+        if (weakself.detailView) {
+            detailViewWidth = weakself.detailView.frame.size.width;
         }
         if (self.cellModel.accessoryType == LJCellAccessorySwitch) {
             detailViewWidth = self.switchView.frame.size.width;

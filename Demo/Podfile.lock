@@ -1,7 +1,7 @@
 PODS:
-  - LJUserCenter (0.9.0):
-    - Masonry (~> 1.0.2)
-  - Masonry (1.0.2)
+  - LJUserCenter (1.0.0):
+    - Masonry (~> 1.1.0)
+  - Masonry (1.1.0)
 
 DEPENDENCIES:
   - LJUserCenter (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LJUserCenter: 2b1704ffda871c6eac2e5737ba86e60ecf0e1057
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  LJUserCenter: 46931797c7be6d202cfc94e7035d510f8314200e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: ce19da5d7f6dcb647eec426beb14fd279e244665
 

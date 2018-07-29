@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LJUserCenterCellModel.h"
+#import <LJUserCenter/LJUserCenter.h>
 
 @interface ViewController ()
 

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController1.h"
-#import "LJUserCenterTableViewCell.h"
+#import <LJUserCenter/LJUserCenter.h>
 
 
 @interface ViewController1 () <LJUserCenterTableViewCellDelegate>
